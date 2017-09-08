@@ -5,12 +5,15 @@
 
 .grid {
   display: grid;
-  grid-template-columns:  1fr 500px 500px 1fr;
+  grid-template-columns:  1fr 1fr;
   grid-template-areas:
-  ". title title ."
-  ". header header ."
-  ". sidebar content ."
-  ". footer footer .";
+  "title title"
+  "header header"
+  "sidebar sidebar"
+  "content content"
+  "footer footer";
+  grid-gap: 0.5em;
+
 }
 
 .title {
@@ -24,7 +27,6 @@
 }
 .content {
   grid-area:content;
-  justify-self:center;
 }
 .footer {
   grid-area:footer;
@@ -35,4 +37,16 @@
 }
 .grid div:nth-child(odd){
   background-color:blue;
+}
+
+@media screen and (min-width: 736px){
+  .grid {
+    display: grid;
+    grid-template-columns:  1fr 500px 500px 1fr;
+    grid-template-areas:
+    ". title title ."
+    ". header header ."
+    ". sidebar content ."
+    ". footer footer .";
+  }
 }
